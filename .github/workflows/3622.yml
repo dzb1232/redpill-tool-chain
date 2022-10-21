@@ -71,7 +71,7 @@ jobs:
           sn='2190SQRNRFYGD'
           mac1='9009D0048C92';
           mac2='9009D0048C93'
-          sed -i -e "s/1234XXX123/${sn}/g" -e 's/XXYYXXYYXXYY/${mac1}/g' ${{matrix.platform}}_user_config.json
+          sed -i -e "s/1234XXX123/${sn}/g" -e "s/XXYYXXYYXXYY/${mac1}/g" ${{matrix.platform}}_user_config.json
           sed -i -e 's/"${mac1}"/&,\n\t"mac2": "${mac2}",\n\t"netif_num": 2/' ${{matrix.platform}}_user_config.json
 
           # 调整synoinfo
